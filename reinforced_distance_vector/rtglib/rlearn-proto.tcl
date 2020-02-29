@@ -2,7 +2,7 @@
 # Reinforced Distance Vector Route Computation
 #########################################################
 
- # This prgram is a Reinforced Distant Vector Routing Protocol
+ # This prgram is a Reinforced Distance Vector Routing Protocol
  # v 1.0 2019/10/19 16∶27∶29 Stany Mwamba $
  #-------------------------------------------------------------
  # In This protocol we apply Reinforcement Learning for
