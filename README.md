@@ -1,5 +1,5 @@
-# NS2-Reinforced-Distant-Vector-Routing-Protocol
-In This NS2 protocol, we apply `Reinforcement Learning` for improving `Distant Vector Routing Protocol`.
+# NS2-Reinforced-Distance-Vector-Routing-Protocol
+In This NS2 protocol, we apply `Reinforcement Learning` for improving `Distance Vector Routing Protocol`.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
