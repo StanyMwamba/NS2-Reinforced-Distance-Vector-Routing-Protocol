@@ -1,7 +1,7 @@
 /* -*-	Mode:C++; c-basic-offset:8; tab-width:8; indent-tabs-mode:t -*- */
 
 /*
- * This prgram is a Reinforced Distant Vector Routing Protocol
+ * This prgram is a Reinforced Distance Vector Routing Protocol
  * $Id: rtProtoDV.cc,v 1.0 2019/10/19 16∶27∶29 Stany Mwamba $
  *-------------------------------------------------------------
  * In This protocol we apply Reinforcement Learning for
