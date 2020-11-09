@@ -134,14 +134,7 @@ Agent/rtProto/RL instproc compute-routes {} {
 
 	    if { $pmt < 0 || $pmt >= $INFINITY || $ppf > $pf || $pmt > $mt } \
 		    continue
-	    #if { $ppf < $pf || $pmt < $mt } {
-		#set pf $ppf
-		#set mt $pmt
-		#unset nh	;# because we must compute *new* next hops
-	    #}
-
-
-		#using of reinforcement value
+	 	#using of reinforcement value
 		#getting state and choosing a better
 		#V1 and V2 are states of two best neighbors
 		set V1 V_($nbr)
