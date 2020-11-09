@@ -222,11 +222,10 @@ Agent/rtProto/RL instproc intf-changed {} {
 		foreach dest ${all-nodes} {
 		    $peers_($nbr) metric $dest $INFINITY
 		}
-		#updating value function when note is unavailable, reward is negative.
-		#mettre à jour la value fonction etat negatif.
+		#updating value function when node is unavailable, reward is negative.
 		V_($nbr) [expr -1+ 0.8*$V_($nbr)] 
 	    } else {
-		#updating value function when note is available
+		#updating value function when node is available
 		#reward is positive 
 		lappend ifsUp_ $nbr 
 		V_($nbr) [expr 1+ 0.8*$V_($nbr)]
