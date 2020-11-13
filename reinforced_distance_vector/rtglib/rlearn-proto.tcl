@@ -2,7 +2,7 @@
 # Reinforced Distance Vector Route Computation
 #########################################################
 
- # This prgram is a Reinforced Distance Vector Routing Protocol
+ # This program is a Reinforced Distance Vector Routing Protocol
  # v 1.0 2019/10/19 16∶27∶29 Stany Mwamba $
  #-------------------------------------------------------------
  # In This protocol we apply Reinforcement Learning for
@@ -216,12 +216,12 @@ Agent/rtProto/RL instproc intf-changed {} {
 		    $peers_($nbr) metric $dest $INFINITY
 		}
 		#updating value function when node is unavailable, reward is negative.
-		V_($nbr) [expr -1+ 0.8*$V_($nbr)] 
+		set $V_($nbr) [expr -1+ 0.8*$V_($nbr)] 
 	    } else {
 		#updating value function when node is available
 		#reward is positive 
 		lappend ifsUp_ $nbr 
-		V_($nbr) [expr 1+ 0.8*$V_($nbr)]
+		set V_($nbr) [expr 1+ 0.8*$V_($nbr)]
 	    }
 	}
     }
