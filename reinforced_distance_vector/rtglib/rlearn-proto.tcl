@@ -38,8 +38,9 @@
 
 Agent/rtProto/RL set UNREACHABLE	[rtObject set unreach_]
 Agent/rtProto/RL set mid_		  0
-
+global instvar V_
 Agent/rtProto/RL proc init-all args {
+    global instvar V_ eps_
     if { [llength $args] == 0 } {
 	set nodeslist [[Simulator instance] all-nodes-list]
     } else {
@@ -47,6 +48,11 @@ Agent/rtProto/RL proc init-all args {
     }
     Agent set-maxttl Agent/rtProto/RL INFINITY
     eval rtObject init-all $nodeslist
+    #initialisation
+	foreach node $nodeslist {
+		set V_($node) 0
+    }
+    
     foreach node $nodeslist {
 	set proto($node) [[$node rtObject?] add-proto RL $node]
     }
@@ -101,7 +107,7 @@ Agent/rtProto/RL instproc send-periodic-update {} {
 Agent/rtProto/RL instproc compute-routes {} {
     $self instvar ns_ ifs_ rtpref_ metric_ nextHop_ nextHopPeer_
     $self instvar peers_ rtsChanged_ multiPath_
-	$self instvar V_ eps_
+    global instvar V_ 
 	#V_ is value function table
 
     set INFINITY [$class set INFINITY]
@@ -216,7 +222,7 @@ Agent/rtProto/RL instproc intf-changed {} {
 		    $peers_($nbr) metric $dest $INFINITY
 		}
 		#updating value function when node is unavailable, reward is negative.
-		set $V_($nbr) [expr -1+ 0.8*$V_($nbr)] 
+		set V_($nbr) [expr -1+ 0.8*$V_($nbr)] 
 	    } else {
 		#updating value function when node is available
 		#reward is positive 
